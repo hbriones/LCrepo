@@ -18,7 +18,7 @@
       <option value="14" ng-model = "questionCategory">Entertainment: Television</option>
       <option value="15" ng-model = "questionCategory">Entertainment: Video Games</option>
       <option value="16" ng-model = "questionCategory">Entertainment: Board Games</option>
-      <option value="17" ng-model = "questionCategory">Science & Nature</option>
+      <option value="17" ng-model = "questionCategory">Science and Nature</option>
       <option value="18" ng-model = "questionCategory">Science: Computers</option>
       <option value="19" ng-model = "questionCategory">Science: Mathematics</option>
       <option value="20" ng-model = "questionCategory">Mythology</option>
@@ -32,7 +32,7 @@
       <option value="28" ng-model = "questionCategory">Vehicles</option>
       <option value="29" ng-model = "questionCategory">Entertainment: Comics</option>
       <option value="30" ng-model = "questionCategory">Science: Gadgets</option>
-      <option value="31" ng-model = "questionCategory">Entertainment: Japanese Anime & Manga</option>
+      <option value="31" ng-model = "questionCategory">Entertainment: Japanese Anime and Manga</option>
       <option value="32" ng-model = "questionCategory">Entertainment: Cartoon & Animations</option>
 </select>
     <select ng-model = "questionDifficulty">
@@ -44,20 +44,17 @@
     <option value = "multiple">multiple</option>
     <option value = "boolean">boolean</option>
     </select>
-<!--     <input ng-model = "questionAmount"></input>
-    <input ng-model = "questionCategory"></input>
-    <input ng-model = "questionDifficulty"></input>
-    <input ng-model = "questionType"></input> -->
-
     <ul ng-repeat="trivia in trivias">
-
-        <li>{{trivia.question}}</li>
-        <li><button id = 'ok'>{{trivia.correct_answer}}</button><!--{{trivia.incorrect_answers}}--></li>
+      <li>{{trivia.question}}</li>
+      <li><button id = 'ok'>{{trivia.correct_answer}}</button></li>
       <div ng-repeat="incorrect in trivia.incorrect_answers">
                 <li><button id = 'ok'>{{incorrect}}</button></li>
       </div>
     </ul>
 </div>
-<!-- <script src="angular.js"></script> -->
+<script src="angular.js"></script>
 </body>
+<footer>
+  Built by Rommel Lagurin
+</footer>
 </html>

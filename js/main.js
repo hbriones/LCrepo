@@ -1,21 +1,26 @@
-angular
-  .module("triviaQestion", [])
 
-  //responsible for all function in angularjs
-  .controller("triviaCtrl", function($scope, $http) {
-    $scope.$watch("questionAmount", function() {
+  function AppCtrl($scope) {
+    $scope.currentNavItem = 'Quiz';
+  }
+
+
+angular.module('MyApp', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
+  .controller("QuizCtrl", function($scope, $http) {
+
+    $scope.$watch("amount", function() {
       });
-      $scope.$watch("questionCategory", function() {
-        $scope.$watch("questionDifficulty", function() {
+      $scope.$watch("category", function() {
+        $scope.$watch("difficulty", function() {
         });
-          $scope.$watch("questionType", function() {
+          $scope.$watch("type", function() {
              returnSearch();
           });
     });
     function returnSearch() {
-      $http.get("https://opentdb.com/api.php?amount=" + $scope.questionAmount + "&category=" + $scope.questionCategory +"&difficulty=" + $scope.questionDifficulty + "&type=" + $scope.questionType).then(function(p) {
+      $http.get("https://opentdb.com/api.php?amount=" + $scope.amount + "&category=" + $scope.category +"&difficulty=" + $scope.difficulty + "&type=" + $scope.type).then(function(p) {
           console.log(p.data.results);
           //regular expression converter
+          // $scope.triviaQestion = p.data.results;
           let array = p.data.results;
           array.forEach(function(item) {
             item.question = item.question.replace(/\&.{4}\;/g, "'");

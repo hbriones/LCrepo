@@ -1,57 +1,93 @@
-<html ng-app="triviaQestion">
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-</head>
-<body>
-  <div ng-controller="triviaCtrl">
-    <select ng-model = "questionAmount">
-      <option value = "5" ng-model = "questionAmount">5</option>
-      <option value = "10" ng-model = "questionAmount">10</option>
-    </select>
-    <select ng-model = "questionCategory">
-      <option value="8" ng-model = "questionCategory">Any</option>
-      <option value="9" ng-model = "questionCategory">General Knowledge</option>
-      <option value="10" ng-model = "questionCategory">Entertainment: Books</option>
-      <option value="11" ng-model = "questionCategory">Entertainment: Film</option>
-      <option value="12" ng-model = "questionCategory">Entertainment: Music</option>
-      <option value="13" ng-model = "questionCategory">Entertainment: Musicals and Theatres</option>
-      <option value="14" ng-model = "questionCategory">Entertainment: Television</option>
-      <option value="15" ng-model = "questionCategory">Entertainment: Video Games</option>
-      <option value="16" ng-model = "questionCategory">Entertainment: Board Games</option>
-      <option value="17" ng-model = "questionCategory">Science and Nature</option>
-      <option value="18" ng-model = "questionCategory">Science: Computers</option>
-      <option value="19" ng-model = "questionCategory">Science: Mathematics</option>
-      <option value="20" ng-model = "questionCategory">Mythology</option>
-      <option value="21" ng-model = "questionCategory">Sports</option>
-      <option value="22" ng-model = "questionCategory">Geography</option>
-      <option value="23" ng-model = "questionCategory">History</option>
-      <option value="24" ng-model = "questionCategory">Politics</option>
-      <option value="25" ng-model = "questionCategory">Art</option>
-      <option value="26" ng-model = "questionCategory">Celebrities</option>
-      <option value="27" ng-model = "questionCategory">Animals</option>
-      <option value="28" ng-model = "questionCategory">Vehicles</option>
-      <option value="29" ng-model = "questionCategory">Entertainment: Comics</option>
-      <option value="30" ng-model = "questionCategory">Science: Gadgets</option>
-      <option value="31" ng-model = "questionCategory">Entertainment: Japanese Anime and Manga</option>
-      <option value="32" ng-model = "questionCategory">Entertainment: Cartoon & Animations</option>
-</select>
-    <select ng-model = "questionDifficulty">
-    <option value = "medium">medium</option>
-    <option value = "easy">easy</option>
-    <option value = "hard">hard</option>
-    </select>
-    <select ng-model = "questionType">
-    <option value = "multiple">multiple</option>
-    <option value = "boolean">boolean</option>
-    </select>
-    <ul ng-repeat="trivia in trivias">
-      <li>{{trivia.question}}</li>
-      <li><button id = 'ok'>{{trivia.correct_answer}}</button></li>
-      <div ng-repeat="incorrect in trivia.incorrect_answers">
-                <li><button id = 'ok'>{{incorrect}}</button></li>
+<div ng-controller="QuizCtrl" ng-cloak="" class="navBardemoBasicUsage" ng-app="MyApp" >
+
+
+  <md-content class="md-padding">
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-click="Quiz" name="QUIZ">
+        Quiz
+      </md-nav-item>
+      <md-nav-item md-nav-click="About" name="ABOUT">
+        About
+      </md-nav-item>
+      <md-nav-item md-nav-click="Contacts" name="CONTACTS">
+        Contacts
+      </md-nav-item>
+    </md-nav-bar>
+
+    <div class="ext-content">
+      <md-card-content>
+        <div layout="row" layout-align="space-between center">
+             <span>Number of Questions</span>
+          <md-select ng-model="amount" placeholder="No. of Questions" class="md-no-underline" >
+            <md-option value="5">5</md-option>
+            <md-option value="10">10</md-option>
+          </md-select>
+        </div>
+
+          <div layout="row" layout-align="space-between center">
+          <span>Select a Category</span>
+          <md-select ng-model="category" placeholder="Category" class="md-no-underline">
+            <md-option value="8">Any</md-option>
+            <md-option value="9">General Knowledge </md-option>
+            <md-option value="10"> Entertainment: Books </md-option>
+            <md-option value="11"> Entertainment: Film </md-option>
+            <md-option value="12"> Entertainment: Music </md-option>
+            <md-option value="13"> Entertainment: Musicals and Theatres </md-option>
+            <md-option value="14"> Entertainment: Television </md-option>
+            <md-option value="15"> Entertainment: Video Games </md-option>
+            <md-option value="16"> Entertainment: Board Games </md-option>
+            <md-option value="17"> Science & Nature </md-option>
+            <md-option value="18"> Science: Computers </md-option>
+            <md-option value="19"> Science: Mathematics </md-option>
+            <md-option value="20"> Mythology </md-option>
+            <md-option value="21"> Sports </md-option>
+            <md-option value="22"> Geography </md-option>
+            <md-option value="23"> History </md-option>
+            <md-option value="24"> Politics </md-option>
+            <md-option value="25"> Art </md-option>
+            <md-option value="26"> Celebrities </md-option>
+            <md-option value="27"> Animals </md-option>
+            <md-option value="28"> Vehicles </md-option>
+            <md-option value="29"> Entertainment: Comics </md-option>
+            <md-option value="30"> Science: Gadgets </md-option>
+            <md-option value="31"> Entertainment: Japanese Anime & Manga </md-option>
+            <md-option value="32"> Entertainment: Cartoon & Animations </md-option>
+          </md-select>
+        </div>
+
+        <div layout="row" layout-align="space-between center">
+          <span>Select Difficulty</span>
+          <md-select ng-model="difficulty" placeholder="Difficulty" class="md-no-underline" >
+            <md-option value="anyDifficulty">Any</md-option>
+            <md-option value="easy">Easy</md-option>
+            <md-option value="medium">Medium </md-option>
+            <md-option value="hard">Hard</md-option>
+          </md-select>
+        </div>
+
+         <div layout="row" layout-align="space-between center">
+          <span>Type</span>
+          <md-select ng-model="type" placeholder="Type" class="md-no-underline" >
+            <md-option value="multiple">Multiple </md-option>
+            <md-option value="boolean">True/False</md-option>
+          </md-select>
+        </div>
+
+
+    <ul ng-repeat="trivia in trivias" >
+        <div>{{trivia.question}}</div>
+      <div><button>{{trivia.correct_answer}}</button></div>
+       <div ng-repeat="incorrect in trivia.incorrect_answers">
+                <div><button>{{incorrect}}</button></div>
       </div>
     </ul>
+
+      </md-card-content>
+    </div>
+
+  </md-content>
 </div>
+
 <script src="angular.js"></script>
 </body>
 <footer>

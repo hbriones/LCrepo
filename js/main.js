@@ -1,8 +1,6 @@
-
-  function AppCtrl($scope) {
-    $scope.currentNavItem = 'Quiz';
-  }
-
+function AppCtrl($scope) {
+  $scope.currentNavItem = 'Quiz';
+}
 
 angular.module('MyApp', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
   .controller("QuizCtrl", function($scope, $http) {
@@ -16,6 +14,7 @@ angular.module('MyApp', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
              returnSearch();
           });
     });
+
     function returnSearch() {
       $http.get("https://opentdb.com/api.php?amount=" + $scope.amount + "&category=" + $scope.category +"&difficulty=" + $scope.difficulty + "&type=" + $scope.type).then(function(p) {
           console.log(p.data.results);

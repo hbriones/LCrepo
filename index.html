@@ -1,105 +1,110 @@
 <html ng-app="MyApp">
-<head>
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-    <link rel="stylesheet" href="css/main.css">
 
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js'></script>
+<head>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js'></script>
   <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js'></script>
   <script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.4/angular-material.js'></script>
-    <script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </head>
+
 <body>
-<div ng-controller="QuizCtrl" ng-cloak="" class="navBardemoBasicUsage">
+  <div ng-controller="QuizCtrl" ng-cloak="" class="navBardemoBasicUsage">
 
 
-  <md-content class="md-padding">
-    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-      <md-nav-item md-nav-click="Quiz" name="QUIZ">
-        Quiz
-      </md-nav-item>
-      <md-nav-item md-nav-click="About" name="ABOUT">
-        About
-      </md-nav-item>
-      <md-nav-item md-nav-click="Contacts" name="CONTACTS">
-        Contacts
-      </md-nav-item>
-    </md-nav-bar>
+    <md-content class="md-padding">
+      <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-click="Quiz" name="QUIZ">
+          Quiz
+        </md-nav-item>
+        <md-nav-item md-nav-click="About" name="ABOUT">
+          About
+        </md-nav-item>
+        <md-nav-item md-nav-click="Contacts" name="CONTACTS">
+          Contacts
+        </md-nav-item>
+      </md-nav-bar>
 
-    <div class="ext-content">
-      <md-card-content>
-        <div layout="row" layout-align="space-between center">
-             <span>Number of Questions</span>
-          <md-select ng-model="amount" placeholder="No. of Questions" class="md-no-underline" >
-            <md-option value="5">5</md-option>
-            <md-option value="10">10</md-option>
-          </md-select>
-        </div>
+      <div class="ext-content">
+        <md-card-content>
+          <div layout="row" layout-align="space-between center">
+            <span>Number of Questions</span>
+            <md-select ng-model="amount" placeholder="No. of Questions" class="md-no-underline">
+              <md-option value="5">5</md-option>
+              <md-option value="10">10</md-option>
+            </md-select>
+          </div>
 
           <div layout="row" layout-align="space-between center">
-          <span>Select a Category</span>
-          <md-select ng-model="category" placeholder="Category" class="md-no-underline">
-            <md-option value="8">Any</md-option>
-            <md-option value="9">General Knowledge </md-option>
-            <md-option value="10"> Entertainment: Books </md-option>
-            <md-option value="11"> Entertainment: Film </md-option>
-            <md-option value="12"> Entertainment: Music </md-option>
-            <md-option value="13"> Entertainment: Musicals and Theatres </md-option>
-            <md-option value="14"> Entertainment: Television </md-option>
-            <md-option value="15"> Entertainment: Video Games </md-option>
-            <md-option value="16"> Entertainment: Board Games </md-option>
-            <md-option value="17"> Science & Nature </md-option>
-            <md-option value="18"> Science: Computers </md-option>
-            <md-option value="19"> Science: Mathematics </md-option>
-            <md-option value="20"> Mythology </md-option>
-            <md-option value="21"> Sports </md-option>
-            <md-option value="22"> Geography </md-option>
-            <md-option value="23"> History </md-option>
-            <md-option value="24"> Politics </md-option>
-            <md-option value="25"> Art </md-option>
-            <md-option value="26"> Celebrities </md-option>
-            <md-option value="27"> Animals </md-option>
-            <md-option value="28"> Vehicles </md-option>
-            <md-option value="29"> Entertainment: Comics </md-option>
-            <md-option value="30"> Science: Gadgets </md-option>
-            <md-option value="31"> Entertainment: Japanese Anime & Manga </md-option>
-            <md-option value="32"> Entertainment: Cartoon & Animations </md-option>
-          </md-select>
-        </div>
+            <span>Select a Category</span>
+            <md-select ng-model="category" placeholder="Category" class="md-no-underline">
+              <md-option value="8">Any</md-option>
+              <md-option value="9">General Knowledge </md-option>
+              <md-option value="10"> Entertainment: Books </md-option>
+              <md-option value="11"> Entertainment: Film </md-option>
+              <md-option value="12"> Entertainment: Music </md-option>
+              <md-option value="13"> Entertainment: Musicals and Theatres </md-option>
+              <md-option value="14"> Entertainment: Television </md-option>
+              <md-option value="15"> Entertainment: Video Games </md-option>
+              <md-option value="16"> Entertainment: Board Games </md-option>
+              <md-option value="17"> Science & Nature </md-option>
+              <md-option value="18"> Science: Computers </md-option>
+              <md-option value="19"> Science: Mathematics </md-option>
+              <md-option value="20"> Mythology </md-option>
+              <md-option value="21"> Sports </md-option>
+              <md-option value="22"> Geography </md-option>
+              <md-option value="23"> History </md-option>
+              <md-option value="24"> Politics </md-option>
+              <md-option value="25"> Art </md-option>
+              <md-option value="26"> Celebrities </md-option>
+              <md-option value="27"> Animals </md-option>
+              <md-option value="28"> Vehicles </md-option>
+              <md-option value="29"> Entertainment: Comics </md-option>
+              <md-option value="30"> Science: Gadgets </md-option>
+              <md-option value="31"> Entertainment: Japanese Anime & Manga </md-option>
+              <md-option value="32"> Entertainment: Cartoon & Animations </md-option>
+            </md-select>
+          </div>
 
-        <div layout="row" layout-align="space-between center">
-          <span>Select Difficulty</span>
-          <md-select ng-model="difficulty" placeholder="Difficulty" class="md-no-underline" >
-            <md-option value="anyDifficulty">Any</md-option>
-            <md-option value="easy">Easy</md-option>
-            <md-option value="medium">Medium </md-option>
-            <md-option value="hard">Hard</md-option>
-          </md-select>
-        </div>
+          <div layout="row" layout-align="space-between center">
+            <span>Select Difficulty</span>
+            <md-select ng-model="difficulty" placeholder="Difficulty" class="md-no-underline">
+              <md-option value="anyDifficulty">Any</md-option>
+              <md-option value="easy">Easy</md-option>
+              <md-option value="medium">Medium </md-option>
+              <md-option value="hard">Hard</md-option>
+            </md-select>
+          </div>
 
-         <div layout="row" layout-align="space-between center">
-          <span>Type</span>
-          <md-select ng-model="type" placeholder="Type" class="md-no-underline" >
-            <md-option value="multiple">Multiple </md-option>
-            <md-option value="boolean">True/False</md-option>
-          </md-select>
-        </div>
+          <div layout="row" layout-align="space-between center">
+            <span>Type</span>
+            <md-select ng-model="type" placeholder="Type" class="md-no-underline">
+              <md-option value="multiple">Multiple </md-option>
+              <md-option value="boolean">True/False</md-option>
+            </md-select>
+          </div>
 
 
-    <ul ng-repeat="trivia in trivias" >
-        <div>{{trivia.question}}</div>
-      <div><button>{{trivia.correct_answer}}</button></div>
-       <div ng-repeat="incorrect in trivia.incorrect_answers">
-                <div><button>{{incorrect}}</button></div>
+          <ul ng-repeat="trivia in trivias">
+            <div>{{trivia.question}}</div>
+
+            <div><button>{{trivia.correct_answer}}</button></div>
+
+            <div ng-repeat="incorrect in trivia.incorrect_answers">
+              <div><button>{{incorrect}}</button></div>
+            </div>
+          </ul>
+
+        </md-card-content>
       </div>
-    </ul>
 
-      </md-card-content>
-    </div>
-
+<<<<<<< HEAD
   </md-content>
 </div>
 <<<<<<< HEAD
@@ -113,6 +118,10 @@
   Hyacinth Briones
 </footer>
 =======
+=======
+    </md-content>
+  </div>
+>>>>>>> 60eaf03c0c3fb6bd296959dc0c9dcdad3bbc9e2c
 </body>
 
 >>>>>>> 3dbced73b272f1ce47a6775b1d07fb3244dccf91

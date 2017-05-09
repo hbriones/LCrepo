@@ -1,7 +1,7 @@
 .navBardemoBasicUsage md-content .ext-content {
   padding: 50px;
   margin: 20px;
-  height: 900px;
+  height: 2500px;
  background: rgba(90, 84, 84, .7) url('https://cloud.githubusercontent.com/assets/8037580/18605179/85a080d2-7cbd-11e6-9079-ec09a8024662.png')repeat; }
 
 
@@ -22,5 +22,20 @@
     display: flex;
     align-items: center;
     width: auto; }
+
   .selectdemoSelectHeader md-content._md {
     max-height: 240px; }
+
+
+    button{
+      cursor: pointer;
+width: 100%;
+text-align: center;
+font-size: 15px;
+padding-left: 5px;
+padding-top: 5px;
+padding-bottom: 5px;
+margin-bottom: 5px;
+border: 2px solid white;
+border-radius: 5px;
+    }

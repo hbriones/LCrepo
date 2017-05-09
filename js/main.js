@@ -17,7 +17,7 @@ angular.module('MyApp', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 
     function returnSearch() {
       $http.get("https://opentdb.com/api.php?amount=" + $scope.amount + "&category=" + $scope.category +"&difficulty=" + $scope.difficulty + "&type=" + $scope.type).then(function(p) {
-          console.log(p.data.results);
+          console.log(p.data);
           //regular expression converter
           // $scope.triviaQestion = p.data.results;
           let array = p.data.results;
@@ -25,6 +25,9 @@ angular.module('MyApp', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
             item.question = item.question.replace(/\&.{4}\;/g, "'");
            item.question = item.question.replace(/\&.{5}\;/g, '"');
            item.question = item.question.replace(`&#039;/g`, '');
+           item.incorrect_answers[0] = item.incorrect_answers[0].replace(/&rsquo;/g, '-');
+           item.incorrect_answers[1] = item.incorrect_answers[1].replace(/&rsquo;/g, '-');
+           item.incorrect_answers[2] = item.incorrect_answers[2].replace(/&rsquo;/g, '-');
           });
           $scope.trivias = array;
           //end of regular expression converter

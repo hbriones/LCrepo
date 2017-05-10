@@ -15,25 +15,11 @@
 </head>
 
 <body>
-  <md-button ng-click='open=!open'>
-    Developer
-  </md-button>
-
-  <div ng-hide='open' ng-controller="QuizCtrl" ng-cloak="" class="navBardemoBasicUsage">
-
+  <!-- <div ng-controller='TimeCtrl'>
+      <p>{{ clock  | date:'medium'}}</p>
+  </div> -->
+  <div  ng-controller="QuizCtrl" ng-cloak="" class="navBardemoBasicUsage">
     <md-content class="md-padding">
-      <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-        <md-nav-item md-nav-click="Quiz" name="QUIZ">
-          Quiz
-        </md-nav-item>
-        <md-nav-item md-nav-click="About" name="ABOUT">
-          About
-        </md-nav-item>
-        <md-nav-item md-nav-click="Developer" name="DEVELOPER">
-          Developer
-        </md-nav-item>
-      </md-nav-bar>
-
       <div class="ext-content">
         <md-card-content>
           <div layout="row" layout-align="space-between center">
@@ -91,8 +77,11 @@
             </md-select>
           </div>
 
-          <!-- <md-button class="md-raised" ng-click="toggle()">PLAY</md-button> -->
-          <!-- <div ng-show="=btnPlay"  class="ng-show"> -->
+          <md-button class="md-raised" ng-click='open=!open'>
+            Play
+          </md-button>
+
+  <div ng-show='open'ng-controller="AboutCtrl">
           <ul ng-repeat="trivia in trivias">
             <div>{{trivia.question}}</div>
             <div><button>{{trivia.correct_answer}}</button></div>
@@ -101,30 +90,30 @@
               <div><button>{{incorrect}}</button></div>
             </div>
           </ul>
-          <!-- </div> -->
-        </md-card-content>
 
-<<<<<<< HEAD
-  </md-content>
+
+
 </div>
-=======
-      </div>
+
+        </md-card-content>
+</div>
+
     </md-content>
   </div>
 
-  <div ng-show='open' ng-controller="AboutCtrl">
+  <!-- <div ng-show='open' ng-controller="AboutCtrl"> -->
     <h1> {{ title }} </h1>
-  </div>
+  <!-- </div> -->
 
   <script src="angular.js"></script>
 </body>
 <footer>
   Built by: Rommel Lagurin Monique Noche Hyacinth Briones
 </footer>
->>>>>>> 4a3869e2e636eb75ec2284a47bdef718be0a441d
+
+
 
 <script src="angular.js"></script>
-</body>
 <footer>
   Built by:
   Rommel Lagurin

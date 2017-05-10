@@ -13,9 +13,8 @@ angular.module('MyApp', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 
     function returnSearch() {
       $http.get("https://opentdb.com/api.php?amount=" + $scope.amount + "&category=" + $scope.category + "&difficulty=" + $scope.difficulty + "&type=" + $scope.type).then(function(p) {
-        console.log(p.data);
+        console.log(p.data.response_code);
         //regular expression converter
-        // $scope.triviaQestion = p.data.results;
         let array = p.data.results;
         array.forEach(function(item) {
           item.question = item.question.replace(/\&.{4}\;/g, "'");
@@ -33,3 +32,17 @@ angular.module('MyApp', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
   .controller("AboutCtrl", function($scope) {
     $scope.title = 'ABOUT PAGE'
   });
+
+
+//   function TimeCtrl($scope, $timeout) {
+//     $scope.clock = "loading clock..."; // initialise the time variable
+//     $scope.tickInterval = 1000 //ms
+//
+//     var tick = function() {
+//         $scope.clock = Date.now() // get the current time
+//         $timeout(tick, $scope.tickInterval); // reset the timer
+//     }
+//
+//     // Start the timer
+//     $timeout(tick, $scope.tickInterval);
+// }
